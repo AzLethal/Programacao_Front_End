@@ -7,5 +7,5 @@
     Nota: ${nota}
     `
  );
- document.write ("<br><hr>");
+ document.write ("<br><hr>Ou<br><hr>");
  document.write ("nota: ", nota);
