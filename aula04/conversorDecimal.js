@@ -1,19 +1,34 @@
 
-function recebeNumero() {
-    let tipo = '';
-    let decimal = parseInt(prompt("Digite o número decimal a ser convertido!"));
-    let conversor = prompt("Digite o qual tipo será a conversão, bin ou Octal?")
-    if(typeof(decimal) !== 'number'){
-        prompt("Digite um número, não são aceitas palavras")
+function validaNumero(numero) {
+    while(isNaN(numero)) {
+        numero = parseInt(prompt("Apenas é aceito números, favor digitar um número!!"));
+    }
+    return numero;
+}
+
+function validaTipo(conversor) {
+    while(conversor !== 'bin' && conversor !== 'octal') {
+        conversor = prompt("Digite 'bin' para conversão binária ou 'octal' para conversão octal?")
     }
     if(conversor === 'bin') {
         conversor = 2;
-        tipo = 'binário'
     } else if (conversor === 'octal') {
         conversor = 8;
-        tipo = 'octal'
+    }
+    console.log(conversor);
+    return conversor;
+}
+
+function recebeNumero() {
+    let tipo = '';
+    let decimal = parseInt(prompt("Digite um número!"));
+    decimal = validaNumero(decimal);
+    let conversor = prompt("Digite o qual tipo será a conversão, bin ou Octal?");
+    conversor = validaTipo(conversor, tipo);
+    if(conversor === 2) {
+        tipo = 'binário';
     } else {
-        prompt("Parametro não aceito, digite 'bin' para binário ou 'octal' pra octal!!");
+        tipo = 'octal';
     }
     document.write(`A seguir o número decimal ${decimal} convertido em ${tipo}: ${converteDecimal(decimal, conversor)}`);
     return converteDecimal(decimal, conversor);
