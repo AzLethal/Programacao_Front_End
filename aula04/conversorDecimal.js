@@ -1,4 +1,4 @@
-
+//valida se o que foi digitado é número ou não.
 function validaNumero(numero) {
     while(isNaN(numero)) {
         numero = parseInt(prompt("Apenas são aceitos números, favor digitar um número!!"));
@@ -6,7 +6,9 @@ function validaNumero(numero) {
     return numero;
 }
 
+//valida o tipo de conversão escolhida - 'bin' ou 'octal'
 function validaTipo(conversor) {
+    //caso escolhido algo que não seja 'bin' ou 'octal', será apresentado a mensagem abaixo, pedindo para digitar 'bin' ou 'octal'
     while(conversor !== 'bin' && conversor !== 'octal') {
         conversor = prompt("Digite 'bin' para conversão binária ou 'octal' para conversão octal?")
     }
@@ -19,6 +21,7 @@ function validaTipo(conversor) {
     return conversor;
 }
 
+//responsável por receber o número digitado
 function recebeNumero() {
     let tipo = '';
     let decimal = parseInt(prompt("Digite um número!"));
@@ -33,6 +36,8 @@ function recebeNumero() {
     document.write(`A seguir o número decimal ${decimal} convertido em ${tipo}: ${converteDecimal(decimal, conversor)}`);
     return converteDecimal(decimal, conversor);
 }
+
+//faz a divisão do decimal digitado pelo conversor
 function converteDecimal(decimal, conversor) {
     /*Servirá para conversão de decimal para binário ou octal,
     no entanto... para hexa precisa ser feito outra função*/
@@ -49,8 +54,8 @@ function converteDecimal(decimal, conversor) {
         console.log("");
     }
     res += quo;
-    res = res.split("");
-    res.reverse().join();
-    return res.toString().replace(/,/g, '');
+    res = res.split(""); //espalha o resultado
+    res.reverse().join();//inverte a ordem e retorna um array
+    return res.toString().replace(/,/g, ''); //retorna o resultado transformando em string e retira as virgulas
 }
 recebeNumero();
