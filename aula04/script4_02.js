@@ -1,6 +1,6 @@
 let a, b, c, d, e, f;
 a = prompt("Digite um número");
-a = parseInt(a);//transforma em inteiro
+a = parseFloat(a);//transforma em inteiro
 b = parseInt(prompt("Digite outro número"));
 c = a * b;
 d = a / b;
