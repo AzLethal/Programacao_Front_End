@@ -1,7 +1,7 @@
 
 function validaNumero(numero) {
     while(isNaN(numero)) {
-        numero = parseInt(prompt("Apenas é aceito números, favor digitar um número!!"));
+        numero = parseInt(prompt("Apenas são aceitos números, favor digitar um número!!"));
     }
     return numero;
 }
@@ -23,7 +23,7 @@ function recebeNumero() {
     let tipo = '';
     let decimal = parseInt(prompt("Digite um número!"));
     decimal = validaNumero(decimal);
-    let conversor = prompt("Digite o qual tipo será a conversão, bin ou Octal?");
+    let conversor = prompt("Digite qual será o tipo de conversão, 'bin' ou 'octal'?");
     conversor = validaTipo(conversor, tipo);
     if(conversor === 2) {
         tipo = 'binário';
