@@ -27,7 +27,7 @@ function recebeNumero() {
     let decimal = parseInt(prompt("Digite um número!"));
     decimal = validaNumero(decimal);
     let conversor = prompt("Digite qual será o tipo de conversão, 'bin' ou 'octal'?");
-    conversor = validaTipo(conversor, tipo);
+    conversor = validaTipo(conversor);
     if(conversor === 2) {
         tipo = 'binário';
     } else {
