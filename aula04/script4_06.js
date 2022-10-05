@@ -16,3 +16,4 @@ j--;//97
 x=i+j;
 i+=j;
 document.write(`i=${i} j=${j} x=${x}`);//i=104 j=97
+document.write(i==="201")
